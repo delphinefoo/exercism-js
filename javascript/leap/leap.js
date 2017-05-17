@@ -10,7 +10,8 @@ var Year = function(input) {
 };
 
 Year.prototype.isLeap = function() {
-  if ((this.year - 1600) % 4 === 0) {
+  var baseYear = this.year - 1600;
+  if (baseYear % 4 === 0 && (baseYear % 100 !== 0 || baseYear % 400 === 0)) {
     return true;
   } else {
     return false;
